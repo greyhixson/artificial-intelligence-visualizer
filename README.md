@@ -3,7 +3,7 @@ This is a visualizer for various topics within Aritificial Intelligence, especia
 JavaScript logic for the algorithms were adapted from AIMA JavaScript: https://github.com/aimacode/aima-javascript.
 
 ## How to Use
-The application can be used by downloading the files, and opening either of the index files within a browser. All instructions are contained on the rightside, and if you have any questions regarding the project feel free to message me. 
+The application can be used by downloading the files, and opening either of the index files within a browser. All instructions are contained on the rightside, and if you have any questions regarding the project feel free to email me. 
 
 ## Search Algorithms
 Currently, 5 Search algorithms are supported.
