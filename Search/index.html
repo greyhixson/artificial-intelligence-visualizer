@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- AI JavaScript logic adapted from "https://github.com/aimacode/aima-javascript" !-->
+    <meta charset="UTF-8">
+    <title>Search Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="navBar">
+        <button class="navBtn" onclick="location.href='../MDP/index.html';"> Markov Decision Process </button>
+    </div>
+
+    <div id ="searchAlgorithms">
+        <h3> Uninformed Search Algorithms </h3>
+        <div>
+            <button onclick="enableControls(breadthFirstSearch);">
+                Breadth-First Search
+            </button>
+            <button onclick="enableControls(depthFirstSearch);">
+                Depth-First Search
+            </button>
+            <button onclick="enableControls(uniformCostSearch);">
+                Uniform Cost Search
+            </button>
+        </div>
+        <h3> Informed Search Algorithms </h3>
+        <div>
+            <button onclick="enableControls(greedySearch);">
+                Greedy Search
+            </button>
+            <button onclick="enableControls(aStarSearch);">
+                A* Search
+            </button>
+        </div>
+    </div>
+
+
+    <div id="instructions">
+        <h3 >Instructions </h3>
+        <ul>
+            <li> Click on the canvas to create a node </li>
+            <li> Shift click on the canvas to create a goal node </li>
+            <li> Shift click on a graph node to swap it with the current goal node </li>
+            <li> Click one node and then another node to create an edge between them </li>
+            <li> Double click a graph node to set it as the start node </li>
+            <li> Double click an edge and enter a value to assign a weight to it </li>
+            <li> Click a node or edge and press 'del' or 'backspace' to delete it </li>
+        </ul>
+        <button onclick="createDefaultGraph()"> Create Default Graph </button>
+        <button onclick="renderEdgeWeights()"> Enable Weighted Edges </button>
+        <div id="settings">
+            <label>
+                Animation Speed:
+                <input id="animationSlider" oninput="updateAnimationSpeed()" type="range" min="100" value="1000" max="5000">
+            </label>
+        </div>
+        <button id="returnPath" onclick="findShortestPath()">
+            Find Goal
+        </button>
+        <button id="endAlgorithm" hidden onclick="clearAlgorithm()"> Exit </button>
+        <div style="position: absolute;">
+            <label class="nodeExpansion">
+                Path Found:
+                <input type="text" readonly class="nodeExpansion" id="pathFound">
+            </label>
+            <label class="nodeExpansion">
+                Order of Expanded Nodes:
+                <input type="text" readonly class="nodeExpansion" id="expandedNodes">
+            </label>
+        </div>
+
+    </div>
+
+
+    <div id ="legend">
+        <h4> Legend </h4>
+        <svg height="600" width="120">
+            <text x="30" y="15" class="medium">Start</text>
+            <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="LightGreen" />
+            <text x="30" y="100" class="medium">Goal</text>
+            <circle cx="50" cy="135" r="20" stroke="black" stroke-width="3" fill="Thistle" />
+            <text x="30" y="185" class="medium">Next</text>
+            <circle cx="50" cy="220" r="20" stroke="black" stroke-width="3" fill="LightBlue" />
+            <text x="30" y="270" class="medium">Unexplored</text>
+            <circle cx="50" cy="305" r="20" stroke="black" stroke-width="3" fill="White" />
+            <text x="30" y="355" class="medium">Explored</text>
+            <circle cx="50" cy="390" r="20" stroke="black" stroke-width="3" fill="Khaki" />
+            <text x="30" y="440" class="medium">Frontier</text>
+            <circle cx="50" cy="475" r="20" stroke="black" stroke-width="3" fill="LightCoral" />
+            <text x="30" y="525" class="medium">Path</text>
+            <circle cx="50" cy="560" r="20" stroke="black" stroke-width="3" fill="MistyRose" />
+        </svg>
+    </div>
+
+
+    <div id="controls" hidden>
+        <div>
+            <div id="state"></div>
+        </div>
+        <div>
+            <button onclick="previousState()" class="previousNext"> &#8592; </button>
+            <div onclick="playPause()" class="playPause"></div>
+            <button onclick="nextState()" class="previousNext">&#8594;</button>
+        </div>
+    </div>
+
+
+    <div id="canvas"></div>
+<script src="graphView.js"></script>
+<script src="graphHelpers.js"></script>
+<script src="graphController.js"> </script>
+<script src="Algorithms/breadthFirstSearch.js"></script>
+<script src="Algorithms/depthFirstSearch.js"></script>
+<script src="Algorithms/uniformCostSearch.js"></script>
+<script src="Algorithms/findShortestPath.js"></script>
+<script src="Algorithms/aStarSearch.js"></script>
+<script src="Algorithms/greedySearch.js"></script>
+</body>
+</html>

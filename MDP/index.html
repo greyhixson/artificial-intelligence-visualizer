@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markov Decision Process</title>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="navBar">
+        <button class="navBtn" onclick="location.href='../Search/index.html';"> Search Algorithms </button>
+    </div>
+
+    <div id="instructions">
+    <h2> Controls </h2>
+        <div id="settings">
+            <label>
+                Animation Speed:
+                <input id="animationSlider" oninput="updateAnimationSpeed()" type="range" min="100" value="1000" max="5000">
+            </label>
+        </div>
+    </div>
+
+    <div id="iterationSelect">
+        <button class="iterationBtn" onclick="enableControls(policyIteration)"> Policy Iteration </button>
+        <button class="iterationBtn" onclick="enableControls(valueIteration)"> Value Iteration </button>
+    </div>
+
+    <div id="controls" hidden>
+        <div>
+            <div id="state"></div>
+        </div>
+        <div>
+            <button onclick="previousState()" class="previousNext"> &#8592; </button>
+            <div onclick="playPause()" class="playPause"></div>
+            <button onclick="nextState()" class="previousNext">&#8594;</button>
+        </div>
+    </div>
+
+    <div id="canvas"></div>
+<script src="gridworldView.js"></script>
+<script src="gridworldController.js"></script>
+<script src="gridworldModel.js"></script>
+</body>
+</html>

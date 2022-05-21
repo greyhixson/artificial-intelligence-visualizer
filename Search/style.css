@@ -1,0 +1,128 @@
+html, body, #canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: lightgray;
+    user-select: none;
+}
+
+#navBar {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#instructions {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+#searchAlgorithms {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+#controls {
+    bottom: 0;
+    position: fixed;
+    width:100%;
+    height:60px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#legend {
+    position: absolute;
+    text-align: center;
+    margin: 225px 10px 0 0;
+    padding-top: 5px;
+    border-style: solid;
+    border-width: 1px;
+    background: beige;
+}
+
+#settings {
+    margin-top: 30px;
+}
+
+#endAlgorithm {
+    background-color: IndianRed;
+    display: inline-block;
+    color: white;
+    width: 150px;
+    height: 50px;
+}
+
+#endAlgorithm:hover {
+    background-color: LightCoral;
+    color: black;
+}
+
+#state {
+    display: inline-block;
+    font-size: 40px;
+}
+
+.nodeExpansion {
+    width: 350px;
+}
+
+.playPause {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 25px 0 25px 50px;
+    border-color: transparent transparent transparent steelblue;
+    transition: all 100ms ease-in-out;
+    margin: 0 15px -15px 20px;
+    display: inline-block;
+}
+
+.playPause:hover {
+    border-color: transparent transparent transparent white;
+}
+
+.pause {
+    border-style: double;
+    border-width:0 0 0 50px;
+}
+
+.previousNext {
+    background-color: steelblue;
+    border-color: transparent transparent transparent steelblue;
+    display: inline-block;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.previousNext:hover {
+    background-color: white;
+    color: black;
+    border-color: transparent transparent transparent white;
+}
+
+.navBtn {
+    margin-top: 10px;
+    background-color: DarkSalmon;
+}
+.navBtn:hover {
+    background-color: LightSalmon;
+    color: black;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+}
+
+button:hover {
+    background-color: Snow;
+}
